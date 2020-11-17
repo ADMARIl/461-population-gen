@@ -9,12 +9,14 @@ MAX_RENT = 7000000
 NUM_PARTNERS = 2
 NUM_ASSOCIATES = 4
 NUM_OWNERS = 6
+NUM_CLIENTS = 12
+NUM_PROPERTIES = 18
 
 ID_START = 1
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    mode = 3
+    mode = 4
     times = int(input("How many lines?\n"))
     count = 1
 
@@ -106,6 +108,15 @@ if __name__ == '__main__':
                 count += 1
                 # print(count)
 
+        # viewings
         elif mode == 4:
+            associate_id = random.randint(1, NUM_ASSOCIATES)
+            clnt_id = random.randint(1, NUM_CLIENTS)
+            property_id = random.randint(1, NUM_PROPERTIES)
 
+            date = faker.date()
+            time = faker.time_object()
+            str_time = time.strftime('%H:%M:%S')
+
+            print("INSERT INTO viewing values(" + str(associate_id) + ',' + str(clnt_id) + ',' + str(property_id) + ',\'' + date + '\',\'' + str_time + '\');')
 
