@@ -1,10 +1,20 @@
-from faker import Faker
-import names
+"""
+File: main.py
+Created by Andrew Ingson (aings1@umbc.edu)
+Date: 11/17/2020
+Notes: Run the program in a python 3 environment in order to build
+"""
+
 import random
 
+import names
+from faker import Faker
+
 faker = Faker()
+
+# change these globals as needed to make ranges work correctly
 MIN_RENT = 500
-MAX_RENT = 7000000
+MAX_RENT = 700000
 
 NUM_PARTNERS = 2
 NUM_ASSOCIATES = 4
