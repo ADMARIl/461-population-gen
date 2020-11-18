@@ -16,7 +16,7 @@ ID_START = 1
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    mode = 4
+    mode = int(input("mode?\n"))
     times = int(input("How many lines?\n"))
     count = 1
 
@@ -51,6 +51,7 @@ if __name__ == '__main__':
             elif pref_switch == 2:
                 preference = 'industrial'
             else:
+                max_rent = random.randint(MIN_RENT, 5100)
                 preference = 'residential'
 
             print("INSERT INTO clnt values(" + str(i) + ',\'' + f_name + '\',\'' + l_name + '\',\'' + street + '\',\'' + city + '\',\'' + state + '\',\'' + zip_code + '\',\'' + unit
@@ -76,7 +77,7 @@ if __name__ == '__main__':
                 zip_code = faker.postcode()
                 unit = faker.building_number()
 
-                manager_id = random.randint(1, NUM_ASSOCIATES)
+                manager_id = random.randint(NUM_PARTNERS+1, NUM_PARTNERS+NUM_ASSOCIATES)
                 ownr_id = random.randint(1, NUM_OWNERS)
                 rent = random.randint(0, 6000)
                 fee = float(random.randint(0, 99)) / 100.0
